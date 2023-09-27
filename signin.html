@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Document</title>
     <style>
-        *{
+                *{
             margin: 0;
             padding: 0;
         }
-         #logo{
+ 
+        body{
+            background-color:aliceblue;
+            color: black;
+            height: 400px;
+        }
+        #logo{
     background-color: black;
     text-align: center;
    }
@@ -18,7 +24,7 @@
     font-size: 50px;
     color: gold;
    }
-   form{
+        form{
             margin: 100px auto;
             width: 400px;
             display: flex;
@@ -28,7 +34,7 @@
             gap: 1rem;
             box-shadow: rgb(56, 51, 19);
             padding: 14px;
-            background: rgb(61, 53, 6);
+            background: rgb(61, 52, 6);
             border-radius: 8px;
             backdrop-filter: blur(8);
             color: black;
@@ -60,32 +66,51 @@
         }
         h3{
             margin-top: 50px;
-            margin-left: 100px;
         }
+
     </style>
 </head>
 <body>
     <div id="logo">
         <h1 id="z">Zenate</h1>
     </div>
-    
     <form>
-        <div>
-            <label>
-                Username
-            </label>
-            <input type="text" placeholder="Username" id="uname" name="uname">
-        </div>
-        <div>
-            <label>
-                Password
-            </label>
-            <input type="password" placeholder="password" id="pass" name="pass">
-        </div>
+     <div>
 
-        <button>Login</button>
-
+     </div>
+     <div>
+        <label for="name">Username</label>
+        <input type="text" id="name" name="name" required>
+     </div>
+     <div> <label for="email">Email</label>
+        <input type="text" id="email" name="email" required></div>
+     <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+        <label for="password">Confirm Password</label>
+        <input type="password" id="cpassword" name="password" required>
+    </div>
+        <button type="submit" onclick="return chk()">Submit</button>
     </form>
-    <h3>I don't have an Account <a href="signin.html">Register here</a></h3>
+    <h3>Have registered <a href="login.html">Log In</a></h3>
+    <script>
+
+        function chk(){
+            
+        var ps = document.getElementById("password").value;
+        var cps = document.getElementById("cpassword").value;
+            if (ps!=""){
+                if(ps !=cps){
+                    alert("incorrect password");
+                    return false
+                }
+
+            }else{
+                alert("input password");
+            }
+        }
+    </script>
 </body>
 </html>
